@@ -1,0 +1,184 @@
+{
+  "hyperparameters": {
+      "train_all_q=1": {
+        "cal_split=0": {
+          "tetuan_power": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          },
+          "energy": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "traffic": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          },
+          "wind": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[32]"
+          },
+          "prices": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "window_x_dim_5_z_dim_3_len_500": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          }
+        },
+        "cal_split=1": {
+          "tetuan_power": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          },
+          "energy": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "traffic": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          },
+          "wind": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[32]"
+          },
+          "prices": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "window_x_dim_5_z_dim_3_len_500": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          }
+        }
+      },
+      "train_all_q=0": {
+        "cal_split=0": {
+          "tetuan_power": {
+            "lr": 0.0005,
+            "lstm_hidden_size": 128,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[32]"
+          },
+          "energy": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 128,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "traffic": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 128,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "wind": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 128,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          },
+          "prices": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64, 128]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "window_x_dim_5_z_dim_3_len_100": {
+            "lr": 0.0005,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64, 128]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "window_x_dim_5_z_dim_3_len_300": {
+            "lr": 0.0005,
+            "lstm_hidden_size": 128,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[32]"
+          },
+          "window_x_dim_5_z_dim_3_len_500": {
+            "lr": 0.0005,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          }
+        },
+        "cal_split=1": {
+          "tetuan_power": {
+            "lr": 0.0005,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          },
+          "energy": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "traffic": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 128,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "wind": {
+            "lr": 0.0005,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "prices": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 128,
+            "lstm_in_layers": "[32, 64]",
+            "lstm_out_layers": "[32]"
+          },
+          "window_x_dim_5_z_dim_3_len_100": {
+            "lr": 0.0001,
+            "lstm_hidden_size": 128,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[32]"
+          },
+          "window_x_dim_5_z_dim_3_len_300": {
+            "lr": 0.0005,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[64, 32]"
+          },
+          "window_x_dim_5_z_dim_3_len_500": {
+            "lr": 0.0005,
+            "lstm_hidden_size": 64,
+            "lstm_in_layers": "[32]",
+            "lstm_out_layers": "[32]"
+          }
+        }
+      }
+    }
+}
