@@ -4,11 +4,11 @@ An important factor to guarantee a responsible use of data-driven systems is tha
 
 This package contains a Python implementation of Rolling Risk Control (Rolling RC) [1] methodology for constructing distribution-free prediction sets that provably control a general risk in an online setting. 
 
-# Risk Control for Online Learning Models [1]
+# Achieving Risk Control in Online Learning Settings [1]
 
 Rolling RC is a method that reliably reports the uncertainty of a target variable response in an online time-series setting and provably attains the user-specified risk level over long-time intervals.
 
-[1] Shai Feldman, Liran Ringel Stephen Bates, Yaniv Romano, [“Risk Control for Online Learning Models”](https://arxiv.org/abs/2205.09095) 2022.
+[1] Shai Feldman, Liran Ringel Stephen Bates, Yaniv Romano, [“Achieving Risk Control in Online Learning Settings”](https://arxiv.org/abs/2205.09095) 2022.
 
 ## Getting Started
 
