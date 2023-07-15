@@ -40,7 +40,7 @@ params = {
     'base_save_path': ['..'],
     'base_data_path': ['datasets/real_data/depths'],
     'annotations_path': ['annotations/train_annotations_onlyvideos.json'],
-    'offline_train_ratio': [0.6],
+    'offline_train_ratio': [0.55],
     'training_epochs': [60],
     'std_method': ['baseline', 'residual_magnitude', 'previous_residual_with_alignment']
 }
