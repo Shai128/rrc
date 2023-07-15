@@ -31,30 +31,43 @@ warnings.filterwarnings("ignore")
 
 def get_single_risk_calibration_schemes(device) -> List[OnlineCalibration]:
     stretching_factory = ExponentialStretchingFactory()
+    identity_stretching_factory = IdentityStretchingFactory()
     set_constructing_factory = PredictionIntervalMatrixConstructingFunctionWithMeanAndStdFactory(stretching_factory,
+                                                                                                 MaxAggregation())
+    identity_set_constructing_factory = PredictionIntervalMatrixConstructingFunctionWithMeanAndStdFactory(identity_stretching_factory,
                                                                                                  MaxAggregation())
     alpha = 0.2
     alphas = [alpha]
     losses_factories = [ImageMiscoverageLossFactory()]
     rrc_factory = RollingRiskControlWithMultipleRisksFactory(alphas, set_constructing_factory, losses_factories)
+    identity_rrc_factory = RollingRiskControlWithMultipleRisksFactory(alphas, identity_set_constructing_factory, losses_factories)
     rrc_calibration = ParameterFreeOnlineCalibration(ImageMiscoverageObjectiveLoss(alpha, device), rrc_factory)
+    identity_rrc_calibration = ParameterFreeOnlineCalibration(ImageMiscoverageObjectiveLoss(alpha, device), identity_rrc_factory)
     dummy_calibration = ParameterFreeOnlineCalibration(ImageMiscoverageObjectiveLoss(alpha, device),
                                                        DummyI2ICalibrationFactory())
-    calibration_schemes = [rrc_calibration, dummy_calibration]
+    calibration_schemes = [identity_rrc_calibration, rrc_calibration, dummy_calibration]
     return calibration_schemes
 
 
 def get_multi_single_risk_calibration_schemes(device) -> List[OnlineCalibration]:
     stretching_factory = ExponentialStretchingFactory()
+    identity_stretching_factory = IdentityStretchingFactory()
     set_constructing_factory = PredictionIntervalMatrixConstructingFunctionWithMeanAndStdFactory(stretching_factory,
+                                                                                                 MaxAggregation())
+
+    identity_set_constructing_factory = PredictionIntervalMatrixConstructingFunctionWithMeanAndStdFactory(identity_stretching_factory,
                                                                                                  MaxAggregation())
     image_miscoverage_alpha, poor_center_coverage_alpha = 0.2, 0.1
     alphas = [image_miscoverage_alpha, poor_center_coverage_alpha]
     losses_factories = [ImageMiscoverageLossFactory(), PoorCenterCoverageLossFactory(0.6)]
     rrc_factory = RollingRiskControlWithMultipleRisksFactory(alphas, set_constructing_factory, losses_factories)
+    identity_rrc_factory = RollingRiskControlWithMultipleRisksFactory(alphas, identity_set_constructing_factory, losses_factories)
     rrc_calibration = ParameterFreeOnlineCalibration(
         MultipleRisksObjectiveLoss(image_miscoverage_alpha, poor_center_coverage_alpha, device=device), rrc_factory)
-    return [rrc_calibration]
+    identity_rrc_calibration = ParameterFreeOnlineCalibration(
+        MultipleRisksObjectiveLoss(image_miscoverage_alpha, poor_center_coverage_alpha, device=device), identity_rrc_factory)
+    return [identity_rrc_calibration, rrc_calibration]
+
 
 
 def get_calibration_schemes(device) -> CalibrationSchemes:
